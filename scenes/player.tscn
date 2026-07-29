@@ -69,10 +69,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69751096, 0)
 shape = SubResource("CapsuleShape3D_46rls")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1197932867]
-transform = Transform3D(1, 0, 0, 0, 0.27583766, 0.96120423, 0, -0.96120423, 0.27583766, 0, 7.119232, 1.7888662)
+transform = Transform3D(1, 0, 0, 0, 0.5152167, 0.8570599, 0, -0.8570599, 0.5152167, 0, 13.484788, 7.3119555)
 
 [node name="character-employee2" parent="." unique_id=585384912 instance=ExtResource("2_g2els")]
 transform = Transform3D(1.509958e-07, 0, 2, 0, 2, 0, -2, 0, 1.509958e-07, 0, 0, 0)
+
+[node name="Skeleton3D" parent="character-employee2/character-employee" parent_id_path=PackedInt32Array(585384912, 641265207) index="0" unique_id=1452885115]
+bones/1/position = Vector3(0.0791, 0.221, -0.0867)
+bones/1/rotation = Quaternion(0.6000701, 0, 0, 0.7999475)
+bones/2/position = Vector3(-0.0761, 0.22, -0.009)
+bones/2/rotation = Quaternion(-0.38867176, 0, 0, 0.9213763)
+bones/4/rotation = Quaternion(0, 0, 0.1330622, 0.9911077)
+bones/5/rotation = Quaternion(0, 0, -0.1330622, 0.9911077)
+bones/6/rotation = Quaternion(0.00051268865, 0, 0, 0.9999999)
 
 [node name="AnimationTree" type="AnimationTree" parent="character-employee2" unique_id=575655734]
 tree_root = SubResource("AnimationNodeStateMachine_46rls")
