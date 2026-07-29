@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c6slftc80kej1"]
 
+[ext_resource type="MeshLibrary" uid="uid://d1y3a66asspox" path="res://assets/models/tiles.res" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://cllff35mvacwf" path="res://scenes/player.tscn" id="1_w5aja"]
 [ext_resource type="MeshLibrary" uid="uid://t7f1oxr6feet" path="res://assets/models/tiles.tres" id="2_onqr8"]
 
@@ -15,7 +16,23 @@ background_mode = 2
 sky = SubResource("Sky_ycayy")
 glow_enabled = true
 
+[sub_resource type="BoxMesh" id="BoxMesh_46rls"]
+size = Vector3(4.477051, 1, 4.194824)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_onqr8"]
+data = PackedVector3Array(-2.2384999, 0.5, 2.0974, 2.2384999, 0.5, 2.0974, -2.2384999, -0.5, 2.0974, 2.2384999, 0.5, 2.0974, 2.2384999, -0.5, 2.0974, -2.2384999, -0.5, 2.0974, 2.2384999, 0.5, -2.0974, -2.2384999, 0.5, -2.0974, 2.2384999, -0.5, -2.0974, -2.2384999, 0.5, -2.0974, -2.2384999, -0.5, -2.0974, 2.2384999, -0.5, -2.0974, 2.2384999, 0.5, 2.0974, 2.2384999, 0.5, -2.0974, 2.2384999, -0.5, 2.0974, 2.2384999, 0.5, -2.0974, 2.2384999, -0.5, -2.0974, 2.2384999, -0.5, 2.0974, -2.2384999, 0.5, -2.0974, -2.2384999, 0.5, 2.0974, -2.2384999, -0.5, -2.0974, -2.2384999, 0.5, 2.0974, -2.2384999, -0.5, 2.0974, -2.2384999, -0.5, -2.0974, 2.2384999, 0.5, 2.0974, -2.2384999, 0.5, 2.0974, 2.2384999, 0.5, -2.0974, -2.2384999, 0.5, 2.0974, -2.2384999, 0.5, -2.0974, 2.2384999, 0.5, -2.0974, -2.2384999, -0.5, 2.0974, 2.2384999, -0.5, 2.0974, -2.2384999, -0.5, -2.0974, 2.2384999, -0.5, 2.0974, 2.2384999, -0.5, -2.0974, -2.2384999, -0.5, -2.0974)
+
 [node name="GameScene" type="Node3D" unique_id=210313341]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1218503251]
+mesh_library = ExtResource("1_onqr8")
+cell_size = Vector3(3, 3, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(1, 0, 1048598, 1, 65535, 1, 2, 65535, 1, 2, 0, 1048589, 1, 65534, 1, 2, 65534, 1, 0, 65534, 1, 0, 65533, 1, 1, 65533, 1, 2, 65533, 1, 3, 65533, 1, 3, 65534, 1, 3, 65535, 1, 3, 0, 1048589, 4, 65535, 1, 4, 0, 1048589, 0, 65532, 28, 1, 65532, 1, 2, 65532, 1, 3, 65532, 1, 4, 65532, 1048604, 4, 65533, 1, 4, 65534, 1, 0, 65535, 1, 1, 65531, 655388, 5, 65532, 1048604, 1, 1, 1048598, 1, 2, 1048598, 1, 3, 1048589, 5, 0, 1048589, 2, 2, 1048589, 3, 3, 1048589)
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=678974811]
 environment = SubResource("Environment_bw6k5")
@@ -25,14 +42,13 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1840474028 instance=ExtResource("1_w5aja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1296387, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.937151, 2.3267007, -1.3233135)
 
-[node name="GridMap" type="GridMap" parent="." unique_id=1038892536]
-mesh_library = ExtResource("2_onqr8")
-cell_size = Vector3(3, 3, 3)
-cell_center_x = false
-cell_center_y = false
-cell_center_z = false
-data = {
-"cells": PackedInt32Array(0, 0, 1, 65535, 0, 1, 65535, 1, 1, 0, 1, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 65535, 1, 4, 0, 1)
-}
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=78212910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14087, 0, -1.7237291)
+mesh = SubResource("BoxMesh_46rls")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=248424491]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=986145437]
+shape = SubResource("ConcavePolygonShape3D_onqr8")
