@@ -4,19 +4,79 @@
 [ext_resource type="PackedScene" uid="uid://dj3thyosqxjga" path="res://assets/models/player/character-employee.glb" id="2_g2els"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46rls"]
-radius = 0.43624878
-height = 0.87249756
+radius = 0.7011719
+height = 1.4023438
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g2els"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qhqgy"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dqkch"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qlg0r"]
+xfade_time = 0.1
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tuyoq"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "velocity.length() > 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fjrip"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "velocity.length() == 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ur7pv"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "is_on_floor() and velocity.length() > 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y4r1p"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "not is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d2wvv"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "is_on_floor() and velocity.length() == 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3v2ag"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "not is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_46rls"]
+states/Start/position = Vector2(198.4, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_g2els")
+states/idle/position = Vector2(362.8, 100.479996)
+states/jump/node = SubResource("AnimationNodeAnimation_qhqgy")
+states/jump/position = Vector2(523.6, 195.2)
+states/walk/node = SubResource("AnimationNodeAnimation_dqkch")
+states/walk/position = Vector2(705.99994, 97.795845)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qlg0r"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_tuyoq"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fjrip"), "jump", "walk", SubResource("AnimationNodeStateMachineTransition_ur7pv"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_y4r1p"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_d2wvv"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_3v2ag")]
 
 [node name="Player" type="CharacterBody3D" unique_id=1840474028 node_paths=PackedStringArray("model")]
 script = ExtResource("1_3vyb7")
 model = NodePath("character-employee2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=248046472]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39702725, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69751096, 0)
 shape = SubResource("CapsuleShape3D_46rls")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1197932867]
-transform = Transform3D(1, 0, 0, 0, 0.27583766, 0.96120423, 0, -0.96120423, 0.27583766, 0, 11.649559, 1.7888662)
+transform = Transform3D(1, 0, 0, 0, 0.27583766, 0.96120423, 0, -0.96120423, 0.27583766, 0, 7.119232, 1.7888662)
 
 [node name="character-employee2" parent="." unique_id=585384912 instance=ExtResource("2_g2els")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 0)
+transform = Transform3D(1.509958e-07, 0, 2, 0, 2, 0, -2, 0, 1.509958e-07, 0, 0, 0)
+
+[node name="AnimationTree" type="AnimationTree" parent="character-employee2" unique_id=575655734]
+tree_root = SubResource("AnimationNodeStateMachine_46rls")
+advance_expression_base_node = NodePath("../..")
+anim_player = NodePath("../AnimationPlayer")
+
+[editable path="character-employee2"]

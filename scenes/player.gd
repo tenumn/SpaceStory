@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 @export var model:Node3D
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
