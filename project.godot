@@ -16,6 +16,11 @@ config/features=PackedStringArray("4.7", "Mobile")
 config/icon="uid://sq4klyay41ym"
 <<<<<<<Updatedupstreamrun/main_scene="uid://c6slftc80kej1"
 
+[autoload]
+
+Debug="*uid://dbm4ha3aptu5n"
+ItemRegistry="*uid://b661wu722pkey"
+
 [display]
 
 window/size/viewport_width=1920
@@ -27,6 +32,11 @@ mouse_cursor/custom_image="uid://otx7h1e76ijy"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/agent/plugin.cfg")
+
+[global_group]
+
+entity:player=""
+entity:item=""
 
 [gui]
 
