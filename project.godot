@@ -27,7 +27,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/agent/plugin.cfg")
+enabled=PackedStringArray("res://addons/agent/plugin.cfg", "res://addons/meshlib_1.5/plugin.cfg")
 
 [input]
 
