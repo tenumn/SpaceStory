@@ -1,6 +1,6 @@
 class_name ItemSpawner
 
-const LOOT_DROP_SCENE = preload("res://resources/dropped_item.tscn")
+const LOOT_DROP_SCENE = preload("res://resources/item_drop.tscn")
 
 static func spawn_by_id(parent_node: Node, position: Vector3, item_id: String) -> RigidBody3D:
 	var data = ItemRegistry.get_item(item_id)
