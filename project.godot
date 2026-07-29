@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Space Story"
-run/main_scene="uid://c6slftc80kej1"
+run/main_scene="uid://b8amfmk238jwe"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
+<<<<<<<Updatedupstreamrun/main_scene="uid://c6slftc80kej1"
 
 [autoload]
 
