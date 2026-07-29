@@ -3,17 +3,10 @@ extends CharacterBody3D
 
 @export var speed = 5.0
 @export var jump_velocity = 4.5
+@export var angle_speed = 15
 
 @export var model:Node3D
 
-func _process(delta: float) -> void:
-	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
-	var input_angle=atan2(input_dir.y,input_dir.x)
-	print(input_angle)
-	print(input_dir)
-	model.global_rotation.y=input_angle
-	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -34,5 +27,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-
+		#
+	if input_dir != Vector2.ZERO:
+		model.global_rotation.y=lerp_angle(model.global_rotation.y,atan2(input_dir.x,input_dir.y),delta*angle_speed)
+	
 	move_and_slide()
