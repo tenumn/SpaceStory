@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c6slftc80kej1"]
 
-[ext_resource type="MeshLibrary" uid="uid://d1y3a66asspox" path="res://assets/models/tiles.res" id="1_onqr8"]
 [ext_resource type="PackedScene" uid="uid://cllff35mvacwf" path="res://scenes/player.tscn" id="1_w5aja"]
 [ext_resource type="MeshLibrary" uid="uid://t7f1oxr6feet" path="res://assets/models/tiles.tres" id="2_onqr8"]
 
@@ -25,7 +24,7 @@ data = PackedVector3Array(-2.2384999, 0.5, 2.0974, 2.2384999, 0.5, 2.0974, -2.23
 [node name="GameScene" type="Node3D" unique_id=210313341]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1218503251]
-mesh_library = ExtResource("1_onqr8")
+mesh_library = ExtResource("2_onqr8")
 cell_size = Vector3(3, 3, 3)
 cell_center_x = false
 cell_center_y = false
