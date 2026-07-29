@@ -13,7 +13,7 @@ config_version=5
 config/name="太空物语"
 run/main_scene="uid://c6slftc80kej1"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://sq4klyay41ym"
 <<<<<<<Updatedupstreamrun/main_scene="uid://c6slftc80kej1"
 
 [autoload]
