@@ -4,6 +4,16 @@ extends CharacterBody3D
 @export var speed = 5.0
 @export var jump_velocity = 4.5
 
+@export var model:Node3D
+
+func _process(delta: float) -> void:
+	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	var input_angle=atan2(input_dir.y,input_dir.x)
+	print(input_angle)
+	print(input_dir)
+	model.global_rotation.y=input_angle
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -17,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
