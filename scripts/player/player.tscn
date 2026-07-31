@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dj3thyosqxjga" path="res://assets/models/player/character-employee.glb" id="2_g2els"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46rls"]
-radius = 0.7011719
+radius = 0.35791016
 height = 1.4023438
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g2els"]
@@ -12,6 +12,9 @@ animation = &"idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qhqgy"]
 animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_enrq2"]
+animation = &"pick-up"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dqkch"]
 animation = &"walk"
@@ -50,19 +53,28 @@ xfade_time = 0.1
 advance_mode = 2
 advance_expression = "not is_on_floor()"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_so2s4"]
+xfade_time = 0.1
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kai5h"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_46rls"]
 states/Start/position = Vector2(198.4, 100)
 states/idle/node = SubResource("AnimationNodeAnimation_g2els")
 states/idle/position = Vector2(362.8, 100.479996)
 states/jump/node = SubResource("AnimationNodeAnimation_qhqgy")
 states/jump/position = Vector2(523.6, 195.2)
+states/pick-up/node = SubResource("AnimationNodeAnimation_enrq2")
+states/pick-up/position = Vector2(523.76, 30.4)
 states/walk/node = SubResource("AnimationNodeAnimation_dqkch")
 states/walk/position = Vector2(705.99994, 97.795845)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qlg0r"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_tuyoq"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fjrip"), "jump", "walk", SubResource("AnimationNodeStateMachineTransition_ur7pv"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_y4r1p"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_d2wvv"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_3v2ag")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qlg0r"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_tuyoq"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fjrip"), "jump", "walk", SubResource("AnimationNodeStateMachineTransition_ur7pv"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_y4r1p"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_d2wvv"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_3v2ag"), "idle", "pick-up", SubResource("AnimationNodeStateMachineTransition_so2s4"), "pick-up", "idle", SubResource("AnimationNodeStateMachineTransition_kai5h")]
 
-[node name="Player" type="CharacterBody3D" unique_id=1840474028 node_paths=PackedStringArray("model", "camera_3d") groups=["entity:player"]]
+[node name="Player" type="CharacterBody3D" unique_id=1840474028 node_paths=PackedStringArray("model", "camera_3d") groups=["Player", "entity:player"]]
 script = ExtResource("1_3vyb7")
-model = NodePath("character-employee2")
+model = NodePath("characteremployee2")
 camera_3d = NodePath("Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=248046472]
@@ -72,21 +84,21 @@ shape = SubResource("CapsuleShape3D_46rls")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1197932867]
 transform = Transform3D(1, 0, 0, 0, 0.5152167, 0.8570599, 0, -0.8570599, 0.5152167, 0, 13.484788, 7.3119555)
 
-[node name="character-employee2" parent="." unique_id=585384912 instance=ExtResource("2_g2els")]
+[node name="characteremployee2" parent="." unique_id=585384912 instance=ExtResource("2_g2els")]
 transform = Transform3D(1.509958e-07, 0, 2, 0, 2, 0, -2, 0, 1.509958e-07, 0, 0, 0)
 
-[node name="Skeleton3D" parent="character-employee2/character-employee" parent_id_path=PackedInt32Array(585384912, 1236499213) index="0" unique_id=985665177]
+[node name="Skeleton3D" parent="characteremployee2/character-employee" parent_id_path=PackedInt32Array(585384912, 641265207) index="0" unique_id=1452885115]
 bones/1/position = Vector3(0.0791, 0.221, -0.0867)
-bones/1/rotation = Quaternion(0.582271, 0, 0, 0.8129948)
+bones/1/rotation = Quaternion(0.5003449, 0, 0, 0.86582625)
 bones/2/position = Vector3(-0.0761, 0.22, -0.009)
-bones/2/rotation = Quaternion(-0.40073538, 0, 0, 0.9161939)
-bones/4/rotation = Quaternion(0, 0, 0.1381897, 0.9904058)
-bones/5/rotation = Quaternion(0, 0, -0.1381897, 0.9904058)
-bones/6/rotation = Quaternion(0.0015498172, 0, 0, 0.9999988)
+bones/2/rotation = Quaternion(-0.45318738, 0, 0, 0.89141536)
+bones/4/rotation = Quaternion(0, 0, 0.16080108, 0.98698694)
+bones/5/rotation = Quaternion(0, 0, -0.16080108, 0.98698694)
+bones/6/rotation = Quaternion(0.00613271, 0, 0, 0.9999812)
 
-[node name="AnimationTree" type="AnimationTree" parent="character-employee2" unique_id=575655734]
+[node name="AnimationTree" type="AnimationTree" parent="characteremployee2" unique_id=575655734]
 tree_root = SubResource("AnimationNodeStateMachine_46rls")
 advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("../AnimationPlayer")
 
-[editable path="character-employee2"]
+[editable path="characteremployee2"]

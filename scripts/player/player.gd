@@ -18,6 +18,10 @@ extends CharacterBody3D
 var _camera_angle: float
 var _target_height: float
 
+#模型和载具路径
+@onready var player_model = $characteremployee2
+@onready var animation_tree = $AnimationTree
+
 func _ready() -> void:
 	# 计算初始俯仰角并保存
 	_camera_angle = atan2(camera_3d.position.y, camera_3d.position.z)
@@ -51,7 +55,9 @@ func _process(delta: float) -> void:
 	
 	camera_3d.position.y = new_height
 	camera_3d.position.z = new_height / tan(_camera_angle)
-
+	
+	#动画树判定
+	animation_tree.set("parameters/has_cart", has_cart_attached())
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -78,3 +84,6 @@ func _physics_process(delta: float) -> void:
 		model.global_rotation.y = lerp_angle(model.global_rotation.y, atan2(input_dir.x, input_dir.y), delta * angle_speed)
 
 	move_and_slide()
+	
+func has_cart_attached() -> bool:
+	return player_model.get_children().any(func(c): return c.is_in_group("cart"))
