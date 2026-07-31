@@ -56,6 +56,7 @@ advance_expression = "not is_on_floor()"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_so2s4"]
 xfade_time = 0.1
 advance_mode = 2
+advance_expression = "Input.is_action_just_pressed(\"interact\")"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kai5h"]
 advance_mode = 2
@@ -89,12 +90,12 @@ transform = Transform3D(1.509958e-07, 0, 2, 0, 2, 0, -2, 0, 1.509958e-07, 0, 0, 
 
 [node name="Skeleton3D" parent="characteremployee2/character-employee" parent_id_path=PackedInt32Array(585384912, 641265207) index="0" unique_id=1452885115]
 bones/1/position = Vector3(0.0791, 0.221, -0.0867)
-bones/1/rotation = Quaternion(0.5003449, 0, 0, 0.86582625)
+bones/1/rotation = Quaternion(0.45359904, 0, 0, 0.8912059)
 bones/2/position = Vector3(-0.0761, 0.22, -0.009)
-bones/2/rotation = Quaternion(-0.45318738, 0, 0, 0.89141536)
-bones/4/rotation = Quaternion(0, 0, 0.16080108, 0.98698694)
-bones/5/rotation = Quaternion(0, 0, -0.16080108, 0.98698694)
-bones/6/rotation = Quaternion(0.00613271, 0, 0, 0.9999812)
+bones/2/rotation = Quaternion(-0.48116767, 0, 0, 0.87662864)
+bones/4/rotation = Quaternion(0, 0, 0.17310068, 0.98490417)
+bones/5/rotation = Quaternion(0, 0, -0.17310068, 0.98490417)
+bones/6/rotation = Quaternion(0.007834633, 0, 0, 0.99996936)
 
 [node name="AnimationTree" type="AnimationTree" parent="characteremployee2" unique_id=575655734]
 tree_root = SubResource("AnimationNodeStateMachine_46rls")
