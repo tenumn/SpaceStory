@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b661wu722pkey" path="res://scripts/item/ItemRegistry.gd" id="1_a8ys3"]
 [ext_resource type="Script" uid="uid://bciwdeu2iccq3" path="res://scripts/item/ItemData.gd" id="2_1uekc"]
-[ext_resource type="Resource" uid="uid://k57gqblngi2b" path="res://scripts/item/wheat.tres" id="3_is7l8"]
+[ext_resource type="Resource" uid="uid://k57gqblngi2b" path="res://resources/items/wheat.tres" id="3_is7l8"]
 
 [node name="ItemRegistry" type="Node" unique_id=325626373]
 script = ExtResource("1_a8ys3")
