@@ -31,4 +31,10 @@ func spawn_by_id(parent_node: Node, position: Vector3, item_id: String) -> Rigid
 	parent_node.add_child(drop)
 	drop.setup(data)
 	
+	drop.apply_central_impulse(Vector3(
+		randf_range(-0.5, 0.5),
+		randf_range(0, 1.5),
+		randf_range(-0.5, 0.5)
+	))
+	
 	return drop
