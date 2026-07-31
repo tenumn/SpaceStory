@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://blvd0w0im4p56"]
 
-[ext_resource type="Script" uid="uid://b1m768kfmgnkw" path="res://resources/item_drop.gd" id="1_t1hra"]
+[ext_resource type="Script" uid="uid://b1m768kfmgnkw" path="res://scripts/item/item_drop.gd" id="1_t1hra"]
 [ext_resource type="Texture2D" uid="uid://38yrw7cnfkpn" path="res://assets/models/player/Textures/colormap.png" id="2_vtkmr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wub2s"]
