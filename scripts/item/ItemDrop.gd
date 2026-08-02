@@ -4,6 +4,9 @@ extends RigidBody3D
 @onready var pickup_area: Area3D = $PickupArea
 var current_data: ItemData = null
 
+func _ready():
+	pickup_area.body_entered.connect(_on_pickup_area_body_entered)
+
 func setup(item_data):
 	if item_data == null:
 		queue_free()
@@ -36,6 +39,11 @@ func auto_fit_collision(model_node: Node):
 		var aabb = mesh_instance.mesh.get_aabb()
 		if $CollisionShape3D.shape is BoxShape3D:
 			var box = $CollisionShape3D.shape as BoxShape3D
-			box.size = aabb.size * 0.8
+			box.size = aabb.size * 1.8
 	else:
 		print("未找到 MeshInstance，碰撞体保持默认尺寸")
+		
+func _on_pickup_area_body_entered(body: Node):
+	if body is Player:   # 需要确保 Player 类已预先加载或使用 class_name
+		if body.try_pickup(current_data):
+			queue_free()

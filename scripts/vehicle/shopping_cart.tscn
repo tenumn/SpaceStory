@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjkwn8hdrdoki" path="res://scripts/vehicle/shopping_cart.gd" id="1_tpsdo"]
 [ext_resource type="PackedScene" uid="uid://hpik3ggvtuo7" path="res://assets/models/tile/supermarket/shopping-cart.glb" id="1_uf4kf"]
-[ext_resource type="Script" uid="uid://gvi74sllj2h" path="res://scripts/Interactable.gd" id="3_vuqlv"]
+[ext_resource type="Script" uid="uid://gvi74sllj2h" path="res://scripts/ui/Interactable.gd" id="3_vuqlv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vuqlv"]
 radius = 0.41545868
