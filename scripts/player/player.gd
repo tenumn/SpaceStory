@@ -1,5 +1,6 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
+@onready var inventory: Inventory = $Inventory
 
 @export var speed = 5.0
 @export var jump_velocity = 4.5
@@ -18,6 +19,9 @@ extends CharacterBody3D
 var _camera_angle: float
 var _target_height: float
 
+func try_pickup(item_data: ItemData) -> bool:
+	return inventory.add_item(item_data, 1)
+		
 func _ready() -> void:
 	# 计算初始俯仰角并保存
 	_camera_angle = atan2(camera_3d.position.y, camera_3d.position.z)

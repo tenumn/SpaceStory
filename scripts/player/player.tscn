@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://d2a1mp6ud27sl"]
 
-[ext_resource type="Script" uid="uid://4xj8s673pnp3" path="res://scripts/player/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://tmpmx2f7a2m1" path="res://scripts/player/Player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://dj3thyosqxjga" path="res://assets/models/player/character-employee.glb" id="2_g2els"]
+[ext_resource type="Script" uid="uid://dx13n56lmul1s" path="res://scripts/player/Inventory.gd" id="3_pg2bq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46rls"]
 radius = 0.35791016
@@ -88,18 +89,22 @@ transform = Transform3D(1, 0, 0, 0, 0.5152167, 0.8570599, 0, -0.8570599, 0.51521
 [node name="characteremployee2" parent="." unique_id=585384912 instance=ExtResource("2_g2els")]
 transform = Transform3D(1.509958e-07, 0, 2, 0, 2, 0, -2, 0, 1.509958e-07, 0, 0, 0)
 
-[node name="Skeleton3D" parent="characteremployee2/character-employee" parent_id_path=PackedInt32Array(585384912, 641265207) index="0" unique_id=1452885115]
+[node name="Skeleton3D" parent="characteremployee2/character-employee" parent_id_path=PackedInt32Array(585384912, 1236499213) index="0" unique_id=985665177]
 bones/1/position = Vector3(0.0791, 0.221, -0.0867)
-bones/1/rotation = Quaternion(0.45359904, 0, 0, 0.8912059)
+bones/1/rotation = Quaternion(0.6053205, 0, 0, 0.79598176)
 bones/2/position = Vector3(-0.0761, 0.22, -0.009)
-bones/2/rotation = Quaternion(-0.48116767, 0, 0, 0.87662864)
-bones/4/rotation = Quaternion(0, 0, 0.17310068, 0.98490417)
-bones/5/rotation = Quaternion(0, 0, -0.17310068, 0.98490417)
-bones/6/rotation = Quaternion(0.007834633, 0, 0, 0.99996936)
+bones/2/rotation = Quaternion(-0.38506213, 0, 0, 0.92289066)
+bones/4/rotation = Quaternion(0, 0, 0.13153283, 0.9913119)
+bones/5/rotation = Quaternion(0, 0, -0.13153283, 0.9913119)
+bones/6/rotation = Quaternion(0.00020348391, 0, 0, 1)
 
 [node name="AnimationTree" type="AnimationTree" parent="characteremployee2" unique_id=575655734]
 tree_root = SubResource("AnimationNodeStateMachine_46rls")
 advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="Inventory" type="Node" parent="." unique_id=1650398700]
+script = ExtResource("3_pg2bq")
+metadata/_custom_type_script = "uid://dx13n56lmul1s"
 
 [editable path="characteremployee2"]
