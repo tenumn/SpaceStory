@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6slftc80kej1"]
 
-[ext_resource type="Script" uid="uid://dxd60cgxcqt0" path="res://scenes/game_scene.gd" id="1_rurhu"]
-[ext_resource type="PackedScene" uid="uid://cllff35mvacwf" path="res://scripts/player/player.tscn" id="1_w5aja"]
+[ext_resource type="Script" uid="uid://dxd60cgxcqt0" path="res://scenes/GameScene.gd" id="1_rurhu"]
+[ext_resource type="PackedScene" uid="uid://cllff35mvacwf" path="res://scripts/player/Player.tscn" id="1_w5aja"]
 [ext_resource type="PackedScene" uid="uid://dsyuxd0s8f222" path="res://scripts/vehicle/shopping_cart.tscn" id="2_kk2rg"]
 [ext_resource type="MeshLibrary" uid="uid://cp72vw3syoebk" path="res://assets/models/tile.tres" id="2_onqr8"]
 [ext_resource type="MeshLibrary" uid="uid://n4sm6ng7js35" path="res://assets/models/wall.tres" id="2_ycayy"]

@@ -20,6 +20,7 @@ config/icon="uid://sq4klyay41ym"
 
 Debug="*uid://dbm4ha3aptu5n"
 ItemRegistry="*uid://crwldvq0njt7x"
+InteractionUIManager="*uid://vdf4r85jsumw"
 
 [display]
 

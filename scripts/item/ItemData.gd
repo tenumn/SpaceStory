@@ -8,3 +8,5 @@ class_name ItemData extends Resource
 @export var mass: float = 0.5
 ## 重力
 @export var gravity_scale: float = 1.0
+## 最大堆叠数量
+@export var max_stack: int = 64

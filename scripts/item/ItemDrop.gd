@@ -19,14 +19,14 @@ func setup(item_data):
 		var instance = item_data.model.instantiate()
 		mesh_container.add_child(instance)
 		instance.transform = Transform3D.IDENTITY
-		_auto_fit_collision(instance)
+		auto_fit_collision(instance)
 	else:
 		push_warning("物品 " + item_data.id + " 缺少模型！")
 		
 	mass = item_data.mass
 	gravity_scale = item_data.gravity_scale
 
-func _auto_fit_collision(model_node: Node):
+func auto_fit_collision(model_node: Node):
 	var mesh_instance = null
 	for child in model_node.get_children(true):
 		if child is MeshInstance3D:
@@ -39,8 +39,3 @@ func _auto_fit_collision(model_node: Node):
 			box.size = aabb.size * 0.8
 	else:
 		print("未找到 MeshInstance，碰撞体保持默认尺寸")
-			
-func _on_pickup_area_body_entered(body):
-	if body.is_in_group("player"):
-		print("玩家拾取了: ", current_data.display_name)
-		queue_free()

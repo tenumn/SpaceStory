@@ -3,6 +3,7 @@ extends Node
 @export var register_items: Array[ItemData] = [];
 var items = {};
 
+## 注册物品
 func _ready() -> void:
 	for item in register_items:
 		if item and item.id.is_empty() == false:
@@ -15,7 +16,7 @@ func _ready() -> void:
 func get_item(id: String) -> ItemData:
 	return items.get(id);
 
-const LOOT_DROP_SCENE = preload("res://scripts/item/item_drop.tscn")
+const LOOT_DROP_SCENE = preload("res://scripts/item/ItemDrop.tscn")
 
 ## 生成物品
 func spawn_by_id(parent_node: Node, position: Vector3, item_id: String) -> RigidBody3D:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cllff35mvacwf"]
 
-[ext_resource type="Script" uid="uid://4xj8s673pnp3" path="res://scripts/player/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://4xj8s673pnp3" path="res://scripts/player/Player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://dj3thyosqxjga" path="res://assets/models/player/character-employee.glb" id="2_g2els"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46rls"]
@@ -87,14 +87,11 @@ transform = Transform3D(1, 0, 0, 0, 0.5152167, 0.8570599, 0, -0.8570599, 0.51521
 [node name="characteremployee2" parent="." unique_id=585384912 instance=ExtResource("2_g2els")]
 transform = Transform3D(1.509958e-07, 0, 2, 0, 2, 0, -2, 0, 1.509958e-07, 0, 0, 0)
 
-[node name="Skeleton3D" parent="characteremployee2/character-employee" parent_id_path=PackedInt32Array(585384912, 641265207) index="0" unique_id=1452885115]
-bones/1/position = Vector3(0.0791, 0.221, -0.0867)
-bones/1/rotation = Quaternion(0.5003449, 0, 0, 0.86582625)
-bones/2/position = Vector3(-0.0761, 0.22, -0.009)
-bones/2/rotation = Quaternion(-0.45318738, 0, 0, 0.89141536)
-bones/4/rotation = Quaternion(0, 0, 0.16080108, 0.98698694)
-bones/5/rotation = Quaternion(0, 0, -0.16080108, 0.98698694)
-bones/6/rotation = Quaternion(0.00613271, 0, 0, 0.9999812)
+[node name="Skeleton3D" parent="characteremployee2/character-employee" parent_id_path=PackedInt32Array(585384912, 1236499213) index="0" unique_id=985665177]
+bones/3/rotation = Quaternion(0.2271077, 0, 0, 0.97386974)
+bones/4/rotation = Quaternion(-0.117662854, -0.38054162, -0.16141537, 0.90293336)
+bones/5/rotation = Quaternion(-0.117662854, 0.38054162, 0.16141537, 0.90293336)
+bones/6/rotation = Quaternion(-0.17817044, 0.00082514156, -0.00014940642, 0.9839994)
 
 [node name="AnimationTree" type="AnimationTree" parent="characteremployee2" unique_id=575655734]
 tree_root = SubResource("AnimationNodeStateMachine_46rls")
