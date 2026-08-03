@@ -26,7 +26,7 @@ func setup(item_data):
 	else:
 		push_warning("物品 " + item_data.id + " 缺少模型！")
 		
-	mass = item_data.mass
+		mass = item_data.mass
 	gravity_scale = item_data.gravity_scale
 
 func auto_fit_collision(model_node: Node):

@@ -1,6 +1,6 @@
 class_name Inventory extends Node
 
-@export var max_slots: int = 1
+@export var max_slots: int = 3
 
 var slots: Array[Dictionary] = []
 

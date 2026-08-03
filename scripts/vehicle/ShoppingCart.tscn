@@ -2,40 +2,22 @@
 
 [ext_resource type="Script" uid="uid://cjkwn8hdrdoki" path="res://scripts/vehicle/ShoppingCart.gd" id="1_tpsdo"]
 [ext_resource type="PackedScene" uid="uid://hpik3ggvtuo7" path="res://assets/models/tile/supermarket/shopping-cart.glb" id="1_uf4kf"]
-[ext_resource type="Script" uid="uid://gvi74sllj2h" path="res://scripts/ui/Interactable.gd" id="3_vuqlv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vuqlv"]
 radius = 0.41545868
-height = 1.1269188
+height = 0.9890126
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_46rls"]
-size = Vector3(0.4206543, 0.3225708, 0.040161133)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_enrq2"]
-radius = 0.9419343
-
-[node name="ShoppingCart" type="RigidBody3D" unique_id=437905348]
+[node name="ShoppingCart" type="RigidBody3D" unique_id=437905348 groups=["entity:cart"]]
 script = ExtResource("1_tpsdo")
 
 [node name="shopping-cart2" parent="." unique_id=1937024077 instance=ExtResource("1_uf4kf")]
 
-[node name="shopping-cart" parent="shopping-cart2" index="0" unique_id=285744121]
+[node name="shopping-cart" parent="shopping-cart2" index="0" unique_id=522015723]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2018166162]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.005478859, 0.40847778, -0.016965866)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.005478859, 0.40847778, 0.08373624)
 shape = SubResource("CapsuleShape3D_vuqlv")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1224900733]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013793945, 0.52682495, 0.42922974)
-shape = SubResource("BoxShape3D_46rls")
-
-[node name="InteractionArea" type="Area3D" parent="." unique_id=1110050032]
-script = ExtResource("3_vuqlv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=32145397 groups=["entity:cart"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42588806, 0)
-shape = SubResource("SphereShape3D_enrq2")
 
 [node name="BehindPosition" type="Marker3D" parent="." unique_id=800710669]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, 0, -0.7067368)
