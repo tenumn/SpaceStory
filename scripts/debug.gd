@@ -44,6 +44,21 @@ func spawn_at_mouse_position():
 	
 	# 调用全局生成器
 	var dropped = ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
+	ItemRegistry.spawn_by_id(get_tree().current_scene, spawn_position, test_item_id)
 	if dropped:
 		print("成功生成掉落物: ", test_item_id, " 位置: ", spawn_position)
 	else:

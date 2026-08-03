@@ -23,6 +23,7 @@ func try_pickup(item_data: ItemData) -> bool:
 	return inventory.add_item(item_data, 1)
 		
 func _ready() -> void:
+	
 	# 计算初始俯仰角并保存
 	_camera_angle = atan2(camera_3d.position.y, camera_3d.position.z)
 	_target_height = camera_3d.position.y
