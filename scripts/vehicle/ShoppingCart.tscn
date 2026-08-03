@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsyuxd0s8f222"]
 
-[ext_resource type="Script" uid="uid://cjkwn8hdrdoki" path="res://scripts/vehicle/shopping_cart.gd" id="1_tpsdo"]
+[ext_resource type="Script" uid="uid://cjkwn8hdrdoki" path="res://scripts/vehicle/ShoppingCart.gd" id="1_tpsdo"]
 [ext_resource type="PackedScene" uid="uid://hpik3ggvtuo7" path="res://assets/models/tile/supermarket/shopping-cart.glb" id="1_uf4kf"]
 [ext_resource type="Script" uid="uid://gvi74sllj2h" path="res://scripts/ui/Interactable.gd" id="3_vuqlv"]
 
